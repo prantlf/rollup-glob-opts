@@ -5,7 +5,7 @@
 [![Dependency Status](https://david-dm.org/prantlf/rollup-glob-opts.svg)](https://david-dm.org/prantlf/rollup-glob-opts)
 [![devDependency Status](https://david-dm.org/prantlf/rollup-glob-opts/dev-status.svg)](https://david-dm.org/prantlf/rollup-glob-opts#info=devDependencies)
 
-Helps maintaining many Rollup build targets by using file glob patterns. Reduces copying & pasting of options in the Rollup configuration.
+Helps maintaining many [Rollup] build targets by using file glob patterns. Reduces copying & pasting of options in the [Rollup configuration].
 
 ## Synopsis
 
@@ -21,7 +21,7 @@ Let us assume the following project structure with two components and their test
         ├── second.ts
         └── second.test.ts
 
-Rollup build configuration usually contains options for each component and each test:
+[Rollup configuration] usually contains options for building each component and each test:
 
 ```js
 export default [
@@ -44,7 +44,7 @@ export default [
 ]
 ```
 
-The copies of options for building components and their tests can be avoided by specifying each build target only once using patterns with name placeholders delimited by square brackets:
+The copies of options for building components and their tests can be avoided by specifying each build target only once using file patterns with name placeholders delimited by square brackets:
 
 ```js
 export default async () => [
@@ -59,7 +59,9 @@ export default async () => [
 ]
 ```
 
-The `output` property can point either to an object or to an array of objects, if multiple bundles are generated from one input.
+The name placeholders in the [`input` property] are replaced with `*` and looked for in the local file system. One build options object is created for each pattern match.
+
+The [`output` property] can point either to an object or to an array of objects, if multiple bundles are generated from one input.
 
 ## Installation
 
@@ -103,3 +105,8 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 Copyright (c) 2021 Ferdinand Prantl
 
 Licensed under the MIT license.
+
+[Rollup]: https://rollupjs.org/
+[Rollup configuration]: https://rollupjs.org/guide/#configuration-files
+[`input` property]: https://rollupjs.org/guide/en/#input
+[`output` property]: https://rollupjs.org/guide/en/#outputdir
