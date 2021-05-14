@@ -25,15 +25,14 @@
   "engines": {
     "node": ">=12"
   },
-  "main": "lib/index.mjs",
-  "module": "lib/index.mjs",
+  "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
     "lib"
   ],
   "scripts": {
-    "check": "node --experimental-modules test/index.mjs",
-    "test": "c8 node --experimental-modules test/index.mjs"
+    "check": "node test",
+    "test": "c8 node test"
   },
   "c8": {
     "reporter": [

@@ -1,8 +1,6 @@
-import tehanu from 'tehanu'
-import { rejects, strictEqual } from 'assert'
-import globOpts from '../lib/index.mjs'
-
-const test = tehanu('globOpts')
+const test = require('tehanu')('globOpts')
+const { rejects, strictEqual } = require('assert')
+const globOpts = require('..')
 
 test('skips an input without placeholders', async () => {
   const original = { input: 'a/b/c' }
