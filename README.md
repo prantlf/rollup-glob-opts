@@ -47,6 +47,8 @@ export default [
 The copies of options for building components and their tests can be avoided by specifying each build target only once using file patterns with name placeholders delimited by square brackets:
 
 ```js
+import globOpts from 'rollup-glob-opts'
+
 export default async () => [
   ...await globOpts({
     input: 'components/[name]/[name].ts',
