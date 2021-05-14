@@ -1,0 +1,65 @@
+{
+  "name": "rollup-glob-opts",
+  "version": "0.0.1",
+  "description": "Helps maintaining many Rollup build targets by using file glob patterns.",
+  "homepage": "https://github.com/prantlf/rollup-glob-opts#readme",
+  "author": {
+    "name": "Ferdinand Prantl",
+    "email": "prantlf@gmail.com",
+    "url": "http://prantl.tk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prantlf/rollup-glob-opts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prantlf/rollup-glob-opts/issues"
+  },
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/prantlf/rollup-glob-opts/blob/master/LICENSE"
+    }
+  ],
+  "engines": {
+    "node": ">=12"
+  },
+  "main": "lib/index.mjs",
+  "module": "lib/index.mjs",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "check": "node --experimental-modules test/index.mjs",
+    "test": "c8 node --experimental-modules test/index.mjs"
+  },
+  "c8": {
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "check-coverage": true,
+    "branches": 100,
+    "lines": 100,
+    "functions": 100,
+    "statements": 100
+  },
+  "dependencies": {
+    "debug": "^4.3.1",
+    "tiny-glob": "^0.2.8"
+  },
+  "devDependencies": {
+    "c8": "^7.7.2",
+    "tehanu": "^0.0.3",
+    "tehanu-repo-coco": "^0.0.2"
+  },
+  "keywords": [
+    "rollup",
+    "rollup-plugin",
+    "expand",
+    "files",
+    "glob"
+  ]
+}
