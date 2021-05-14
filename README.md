@@ -13,12 +13,12 @@ Let us assume the following project structure with two components and their test
 
     components/
     ├── first
-    │   ├── first.ts
     │   ├── first.md
+    │   ├── first.ts
     │   └── first.test.ts
     └── second
-        ├── second.ts
         ├── second.md
+        ├── second.ts
         └── second.test.ts
 
 Rollup build configuration usually contains options for each component and each test:
