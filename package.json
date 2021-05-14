@@ -1,6 +1,6 @@
 {
   "name": "rollup-glob-opts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Helps maintaining many Rollup build targets by using file glob patterns.",
   "homepage": "https://github.com/prantlf/rollup-glob-opts#readme",
   "author": {
