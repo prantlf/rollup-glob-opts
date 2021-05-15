@@ -11,7 +11,7 @@ Helps maintaining many [Rollup] build targets by using file glob patterns. Reduc
 
 Let us assume the following project structure with two components and their tests:
 
-    components/
+    src/
     ├── first
     │   ├── first.md
     │   ├── first.ts
@@ -26,20 +26,20 @@ Let us assume the following project structure with two components and their test
 ```js
 export default [
   {
-    input: 'components/first/first.ts',
+    input: 'src/first/first.ts',
     output: { file: 'dist/first.js' }
   },
   {
-    input: 'components/second/second.ts',
+    input: 'src/second/second.ts',
     output: { file: 'dist/second.js' }
   }
   {
-    input: 'components/first/first.test.ts',
-    output: { file: 'components/first/first.test.js' }
+    input: 'src/first/first.test.ts',
+    output: { file: 'src/first/first.test.js' }
   },
   {
-    input: 'components/second/second.test.js',
-    output: { file: 'components/second/second.test.js' }
+    input: 'src/second/second.test.js',
+    output: { file: 'src/second/second.test.js' }
   }
 ]
 ```
@@ -51,12 +51,12 @@ import globOpts from 'rollup-glob-opts'
 
 export default async () => [
   ...await globOpts({
-    input: 'components/[name]/[name].ts',
+    input: 'src/[name]/[name].ts',
     output: { file: 'dist/[name].js' }
   }),
   ...await globOpts({
-    input: 'components/[name]/[name].test.ts',
-    output: { file: 'components/[name]/[name].test.js' }
+    input: 'src/[name]/[name].test.ts',
+    output: { file: 'src/[name]/[name].test.js' }
   })
 ]
 ```
@@ -82,18 +82,18 @@ If you need to investigate an unexpected behaviour of the file globbing, you can
 ```
 DEBUG=glob-opts rollup -c
 ...
-  glob-opts expanding "components/[name]/[name].ts" +0ms
-  glob-opts 4 files found for "components/*/*.ts". +1ms
-  glob-opts matching "components/first/first.test.ts" with /^components\/([^/]+)\/([^/]+)\.ts$/ +0ms
-  glob-opts dropping "components/first/first.test.ts", inconsistent "[name]": "first" != "first.test" +0ms
-  glob-opts matching "components/first/first.ts" with /^components\/([^/]+)\/([^/]+)\.ts$/ +0ms
-  glob-opts matching "components/second/second.test.ts" with /^components\/([^/]+)\/([^/]+)\.ts$/ +1ms
-  glob-opts dropping "components/second/second.test.ts", inconsistent "[name]": "second" != "second.test" +0ms
-  glob-opts matching "components/second/second.ts" with /^components\/([^/]+)\/([^/]+)\.ts$/ +0ms
-  glob-opts 2 files matched "components/[name]/[name].ts". +0ms
-  glob-opts matching "components/first/first.ts" with /^components\/([^/]+)\/([^/]+)\.ts$/ +0ms
+  glob-opts expanding "src/[name]/[name].ts" +0ms
+  glob-opts 4 files found for "src/*/*.ts". +1ms
+  glob-opts matching "src/first/first.test.ts" with /^src\/([^/]+)\/([^/]+)\.ts$/ +0ms
+  glob-opts dropping "src/first/first.test.ts", inconsistent "[name]": "first" != "first.test" +0ms
+  glob-opts matching "src/first/first.ts" with /^src\/([^/]+)\/([^/]+)\.ts$/ +0ms
+  glob-opts matching "src/second/second.test.ts" with /^src\/([^/]+)\/([^/]+)\.ts$/ +1ms
+  glob-opts dropping "src/second/second.test.ts", inconsistent "[name]": "second" != "second.test" +0ms
+  glob-opts matching "src/second/second.ts" with /^src\/([^/]+)\/([^/]+)\.ts$/ +0ms
+  glob-opts 2 files matched "src/[name]/[name].ts". +0ms
+  glob-opts matching "src/first/first.ts" with /^src\/([^/]+)\/([^/]+)\.ts$/ +0ms
   glob-opts new output "dist/first.js" for "dist/[name].js" +0ms
-  glob-opts matching "components/second/second.ts" with /^components\/([^/]+)\/([^/]+)\.ts$/ +0ms
+  glob-opts matching "src/second/second.ts" with /^src\/([^/]+)\/([^/]+)\.ts$/ +0ms
   glob-opts new output "dist/second.js" for "dist/[name].js" +0ms
 ...
 ```
