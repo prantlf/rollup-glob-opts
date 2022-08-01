@@ -46,13 +46,13 @@
     "statements": 100
   },
   "dependencies": {
-    "debug": "^4.3.1",
-    "tiny-glob": "^0.2.8"
+    "debug": "^4.3.4",
+    "tiny-glob": "^0.2.9"
   },
   "devDependencies": {
-    "c8": "^7.7.2",
-    "tehanu": "^0.0.3",
-    "tehanu-repo-coco": "^0.0.2"
+    "c8": "^7.12.0",
+    "tehanu": "^1.0.1",
+    "tehanu-repo-coco": "^1.0.0"
   },
   "keywords": [
     "rollup",
