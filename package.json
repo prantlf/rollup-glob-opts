@@ -23,7 +23,7 @@
     }
   ],
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -31,8 +31,9 @@
     "lib"
   ],
   "scripts": {
+    "lint": "biome lint lib test/*.js",
     "check": "node test",
-    "test": "c8 node test"
+    "test": "biome lint lib test/*.js && c8 node test"
   },
   "c8": {
     "reporter": [
@@ -46,13 +47,14 @@
     "statements": 100
   },
   "dependencies": {
-    "debug": "^4.3.4",
+    "debug": "^4.3.6",
     "tiny-glob": "^0.2.9"
   },
   "devDependencies": {
-    "c8": "^7.12.0",
+    "@biomejs/biome": "^1.8.3",
+    "c8": "^10.1.2",
     "tehanu": "^1.0.1",
-    "tehanu-repo-coco": "^1.0.0"
+    "tehanu-repo-coco": "^1.0.1"
   },
   "keywords": [
     "rollup",
