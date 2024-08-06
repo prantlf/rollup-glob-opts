@@ -33,6 +33,7 @@
   "scripts": {
     "lint": "biome lint lib test/*.js",
     "check": "node test",
+    "cover": "c8 node test",
     "test": "biome lint lib test/*.js && c8 node test"
   },
   "c8": {
