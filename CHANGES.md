@@ -1,5 +1,11 @@
 # Changes
 
+## [0.2.0](https://github.com/prantlf/rollup-glob-opts/compare/v0.1.0...v0.2.0) (2024-12-10)
+
+### Features
+
+* Upgrade dependencies ([784750e](https://github.com/prantlf/rollup-glob-opts/commit/784750ec04f3af5dc22c6c70c80e41186782250a))
+
 ## [0.1.0](https://github.com/prantlf/rollup-glob-opts/compare/v0.0.2...v0.1.0) (2024-08-06)
 
 ### Bug Fixes
